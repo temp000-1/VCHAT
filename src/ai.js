@@ -5,7 +5,7 @@ async function queryAI(text) {
   try {
     const apiUrl = process.env.AI_API_URL;
     const response = await axios.get(apiUrl, {
-      params: { text }
+      params: { prompt: text }
     });
     
     return response.data.response || response.data.result || JSON.stringify(response.data);
